@@ -4,7 +4,7 @@ import Layout from "../components/Layout"
 
 export default () => (
     <Layout>
-        <Link to="/jsInterviewTestBook">Book</Link>
+        <Link to="/jsInterviewTestBook/">Book</Link>
         <div>Salut de pe live!</div>
     </Layout>
 )
