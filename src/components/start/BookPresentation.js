@@ -3,7 +3,7 @@ import {Link} from "gatsby"
 
 export default () => (
     <div className="row">
-        <div className="col-md-8">
+        <div className="col-md-6">
             <h4>MEAL PREP: The Complete Cookbook To Clean Eating, Weight Loss And Food Savings With Easy To Cook
                 Recipes </h4>
             <p>
@@ -19,17 +19,17 @@ export default () => (
                 <button type="button" className="btn btn-outline-success btn-lg">Buy The Book Today</button>
             </div>
         </div>
-        <div className="col-md-4">
+        <div className="col-md-6">
             <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
                 <div className="carousel-inner">
                     <div className="carousel-item active">
                         <img src="https://i.pinimg.com/originals/5f/60/36/5f6036ea0bccb9c6ac28ab6d7844297d.jpg"
-                             style={{maxHeight: "300px", margin: "0 auto"}} className="d-block" alt="book"/>
+                             style={{maxHeight: "400px", margin: "0 auto"}} className="d-block" alt="book"/>
                     </div>
                     <div className="carousel-item">
                         <img
                             src="https://media.nbb-cdn.de/images/products/300000/303145/2_DE_tolino-vision-4-HD_eBook-Reader_smartLight_geneigt-1.jpg?size=2800"
-                            style={{maxHeight: "300px", margin: "0 auto"}} className="d-block" alt="ebook"/>
+                            style={{maxHeight: "400px", margin: "0 auto"}} className="d-block" alt="ebook"/>
                     </div>
                 </div>
                 <a className="carousel-control-prev" href="#carouselExampleControls" role="button"
