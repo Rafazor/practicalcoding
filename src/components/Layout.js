@@ -1,7 +1,13 @@
 import React from "react"
+import Navigation from "./navigation/Navigation";
 
-export default ({ children }) => (
-    <div style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}>
-        {children}
-    </div>
+import("../style/global/global.scss")
+
+export default ({children}) => (
+    <React.Fragment>
+        <Navigation/>
+        <div className="container">
+            {children}
+        </div>
+    </React.Fragment>
 )
