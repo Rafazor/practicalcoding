@@ -7,6 +7,9 @@ export default () => (
         <div className="container">
             <Link to="/">Home</Link>
             <div>Salut de pe quiz!</div>
+            <div>Salut de pe quiz1!</div>
+            <div>Salut de pe quiz2!</div>
+            <div>Salut de pe quiz3!</div>
         </div>
     </Layout>
 )
