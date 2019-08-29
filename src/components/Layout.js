@@ -6,8 +6,6 @@ import("../style/global/global.scss")
 export default ({children}) => (
     <React.Fragment>
         <Navigation/>
-        <div className="container">
-            {children}
-        </div>
+        {children}
     </React.Fragment>
 )

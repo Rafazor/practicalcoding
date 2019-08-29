@@ -1,10 +1,12 @@
 import React from "react"
 import {Link} from "gatsby"
 import Layout from "../components/Layout"
-import StartContent from "../components/start/StartContent"
 
 export default () => (
     <Layout>
-        <StartContent/>
+        <div className="container">
+            <Link to="/">Home</Link>
+            <div>Salut de pe quiz!</div>
+        </div>
     </Layout>
 )
