@@ -25,10 +25,12 @@ class Quiz extends React.Component {
         if (this.state.quizData.questions[this.state.questionNumber + 1]) {
             this.setState({
                 questionNumber: this.state.questionNumber + 1
-            })
-        } else {
-            this.setState({
-                done: true
+            }, () => {
+                if (this.state.questionNumber + 1 === this.state.quizData.questions.length) {
+                    this.setState({
+                        done: true
+                    })
+                }
             })
         }
     }
