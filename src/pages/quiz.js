@@ -9,27 +9,19 @@ class Quiz extends React.Component {
         quizData: this.props.location.state.interviewData,
         questionNumber: 0,
         quizAnswers: {},
-        textAreaPrev: "",
-        textAreaStatic: "Add your answer here!",
-        textAreaValue: "Add your answer here!",
-        done: true
+        done: false
 
     }
+
     getPrevQuestion = () => {
-
-    }
-
-    addAnswer = () => {
-        let answers = {...this.state.quizAnswers}
-        answers[this.state.quizData.questions[this.state.questionNumber].id] = this.state.textAreaValue
-        this.setState({
-            quizAnswers: answers
-        })
+        if (this.state.quizData.questions[this.state.questionNumber - 1]) {
+            this.setState({
+                questionNumber: this.state.questionNumber - 1
+            })
+        }
     }
 
     getNextQuestion = () => {
-        this.addAnswer();
-
         if (this.state.quizData.questions[this.state.questionNumber + 1]) {
             this.setState({
                 questionNumber: this.state.questionNumber + 1
@@ -39,8 +31,6 @@ class Quiz extends React.Component {
                 done: true
             })
         }
-
-
     }
 
     finishQuiz = () => {
@@ -53,18 +43,26 @@ class Quiz extends React.Component {
         })
     }
 
+
     handleTextArea = (event) => {
-        this.setState({textAreaValue: event.target.value});
+        let answer = event.target.value
+        let answerArr = {...this.state.quizAnswers}
+        answerArr[this.state.quizData.questions[this.state.questionNumber].id] = answer
+        this.setState({
+            quizAnswers: answerArr
+        });
     }
 
     render() {
-        console.log(this.state)
         return (
             <div className="container">
                 <Link to="/">Home</Link>
                 <div>{this.state.quizData.questions[this.state.questionNumber].id}</div>
                 <div>{this.state.quizData.questions[this.state.questionNumber].question}</div>
-                <textarea onChange={this.handleTextArea} value={this.state.textAreaValue} cols={40} rows={10}/>
+                <textarea onChange={this.handleTextArea}
+                          value={this.state.quizAnswers[this.state.questionNumber + 1] ? this.state.quizAnswers[this.state.questionNumber + 1] : ""}
+                          cols={40} rows={10}/>
+                <button onClick={this.getPrevQuestion}>Prev Question</button>
                 <button onClick={this.getNextQuestion}>Next Question</button>
                 {
                     this.state.done === true &&
