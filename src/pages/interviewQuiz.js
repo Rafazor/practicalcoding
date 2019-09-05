@@ -3,13 +3,14 @@ import {Link, navigate} from "gatsby"
 import Layout from "../components/Layout"
 import jsInterviewData from "../components/interviewData/jsInterviewData"
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import {docco} from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 class InterviewQuiz extends React.Component {
 
     state = {
         doneQuizData: [],
         userAnswers: [],
+        userExamples: [],
         done: false
     }
 
@@ -25,6 +26,7 @@ class InterviewQuiz extends React.Component {
             this.setState(() => ({
                     doneQuizData: this.props.location.state.doneQuizData,
                     userAnswers: this.props.location.state.userAnswers,
+                    userExamples: this.props.location.state.userExamples,
                     done: this.props.location.state.done
                 }
             ));
@@ -34,6 +36,7 @@ class InterviewQuiz extends React.Component {
 
     render() {
         const userAnswers = this.state.userAnswers
+        const userExamples = this.state.userExamples
 
         return (
             <Layout>
@@ -55,15 +58,24 @@ class InterviewQuiz extends React.Component {
                                                     <div className="preview-answer">
                                                         {userAnswers[item.id]}
                                                     </div>
-                                                    <SyntaxHighlighter language="javascript" style={docco} showLineNumbers={true} lineNumberStyle={{color: "#ff704d"}}>
-                                                        {userAnswers[item.id]}
+                                                    {userExamples[item.id] &&
+                                                    <SyntaxHighlighter language="javascript" style={docco}
+                                                                       showLineNumbers={true}
+                                                                       lineNumberStyle={{color: "#ff704d"}}>
+                                                        {userExamples[item.id]}
                                                     </SyntaxHighlighter>
+                                                    }
+
                                                 </div>
                                                 <div className="col-md-6">
                                                     <div className="preview-answer">{item.answer}</div>
-                                                    <SyntaxHighlighter language="javascript" style={docco} showLineNumbers={true} lineNumberStyle={{color: "#ff704d"}}>
+                                                    {item.example &&
+                                                    <SyntaxHighlighter language="javascript" style={docco}
+                                                                       showLineNumbers={true}
+                                                                       lineNumberStyle={{color: "#ff704d"}}>
                                                         {item.example}
                                                     </SyntaxHighlighter>
+                                                    }
                                                     <div className="preview-answer">{item.tip}</div>
                                                 </div>
                                             </div>

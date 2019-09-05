@@ -7,16 +7,16 @@ class Quiz extends React.Component {
         quizData: {},
         questionNumber: 0,
         quizAnswers: {},
-        done: false
-
+        quizExamples: {},
+        done: false,
+        progress: 25
     }
 
     componentDidMount() {
         if (this.props.location.state.interviewData !== undefined) {
             this.setState(() => ({
-                    quizData: this.props.location.state.interviewData.questions,
-                }
-            ));
+                quizData: this.props.location.state.interviewData.questions,
+            }));
         }
     }
 
@@ -24,6 +24,8 @@ class Quiz extends React.Component {
         if (this.state.quizData[this.state.questionNumber - 1]) {
             this.setState({
                 questionNumber: this.state.questionNumber - 1
+            }, () => {
+                this.calculateProgress(this.state.questionNumber + 1)
             })
         }
     }
@@ -38,6 +40,7 @@ class Quiz extends React.Component {
                         done: true
                     })
                 }
+                this.calculateProgress(this.state.questionNumber + 1)
             })
         }
     }
@@ -47,7 +50,8 @@ class Quiz extends React.Component {
             state: {
                 done: true,
                 doneQuizData: this.state.quizData,
-                userAnswers: this.state.quizAnswers
+                userAnswers: this.state.quizAnswers,
+                userExamples: this.state.quizExamples
             }
         })
     }
@@ -62,6 +66,25 @@ class Quiz extends React.Component {
         });
     }
 
+    handleExamplesTextArea = (event) => {
+        let answer = event.target.value
+        let answerArr = {...this.state.quizExamples}
+        answerArr[this.state.quizData[this.state.questionNumber].id] = answer
+        this.setState({
+            quizExamples: answerArr
+        });
+    }
+
+    calculateProgress = (position = 0) => {
+        let progress = (100 * position) / this.state.quizData.length
+        this.setState((prevState) => (
+            {
+                ...prevState,
+                progress: progress
+            }
+        ))
+    }
+
     render() {
         let questionNumber = this.state.questionNumber
         return (
@@ -73,13 +96,13 @@ class Quiz extends React.Component {
                         <div className="row">
                             <div className="col-sm-12">
                                 <div>
-                                    {
-                                        this.state.quizData.map(function (item, i) {
-                                            return (
-                                                <span className={i  < questionNumber + 1 ? "text-success" : "text-danger"}>{i + 1}</span>
-                                            )
-                                        })
-                                    }
+                                    <div className="progress">
+                                        <div className="progress-bar" role="progressbar"
+                                             style={{width: this.state.progress + "%"}}
+                                             aria-valuenow={this.state.progress} aria-valuemin="0"
+                                             aria-valuemax="100">{this.state.progress}%
+                                        </div>
+                                    </div>
                                 </div>
 
                             </div>
@@ -96,6 +119,11 @@ class Quiz extends React.Component {
                                     <div>
                                           <textarea onChange={this.handleTextArea}
                                                     value={this.state.quizAnswers[this.state.questionNumber + 1] ? this.state.quizAnswers[this.state.questionNumber + 1] : ""}
+                                                    cols={40} rows={10}/>
+                                    </div>
+                                    <div>
+                                          <textarea onChange={this.handleExamplesTextArea}
+                                                    value={this.state.quizExamples[this.state.questionNumber + 1] ? this.state.quizExamples[this.state.questionNumber + 1] : ""}
                                                     cols={40} rows={10}/>
                                     </div>
                                     <div>
