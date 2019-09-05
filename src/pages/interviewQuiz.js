@@ -5,6 +5,12 @@ import jsInterviewData from "../components/interviewData/jsInterviewData"
 
 class InterviewQuiz extends React.Component {
 
+    state = {
+        doneQuizData: [],
+        userAnswers: [],
+        done: false
+    }
+
     getQuizSet = () => {
         let data = jsInterviewData[Math.floor(Math.random() * jsInterviewData.length)];
         navigate("/quiz/", {
@@ -12,24 +18,31 @@ class InterviewQuiz extends React.Component {
         })
     }
 
-    render() {
-        let doneQuizData
-        let userAnswers
-
-        if (this.props.location.state.doneQuizData && this.props.location.state.userAnswers) {
-            doneQuizData = this.props.location.state.doneQuizData.questions
-            userAnswers = this.props.location.state.userAnswers
+    componentDidMount() {
+        if (this.props.location.state.done !== undefined) {
+            this.setState(() => ({
+                    doneQuizData: this.props.location.state.doneQuizData,
+                    userAnswers: this.props.location.state.userAnswers,
+                    done: this.props.location.state.done
+                }
+            ));
         }
+    }
+
+
+    render() {
+        const userAnswers = this.state.userAnswers
+
         return (
             <Layout>
                 <div className="container">
                     <Link to="/">Home</Link>
                     <div onClick={this.getQuizSet}>START</div>
                     {
-                        this.props.location.state.done === true &&
+                        this.state.done === true &&
                         <>
                             {
-                                doneQuizData.map(function (item, i) {
+                                this.state.doneQuizData.map(function (item, i) {
                                     console.log(item);
                                     return (
                                         <>
