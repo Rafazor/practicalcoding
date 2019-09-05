@@ -2,6 +2,8 @@ import React from "react"
 import {Link, navigate} from "gatsby"
 import Layout from "../components/Layout"
 import jsInterviewData from "../components/interviewData/jsInterviewData"
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 class InterviewQuiz extends React.Component {
 
@@ -44,7 +46,7 @@ class InterviewQuiz extends React.Component {
                             {
                                 this.state.doneQuizData.map(function (item, i) {
                                     return (
-                                        <>
+                                        <div key={i}>
                                             <div className="row">
                                                 <div className="col-sm-12">{item.question}</div>
                                             </div>
@@ -53,23 +55,24 @@ class InterviewQuiz extends React.Component {
                                                     <div className="preview-answer">
                                                         {userAnswers[item.id]}
                                                     </div>
+                                                    <SyntaxHighlighter language="javascript" style={docco} showLineNumbers={true} lineNumberStyle={{color: "#ff704d"}}>
+                                                        {userAnswers[item.id]}
+                                                    </SyntaxHighlighter>
                                                 </div>
                                                 <div className="col-md-6">
                                                     <div className="preview-answer">{item.answer}</div>
-                                                    <div className="preview-answer">{item.example}</div>
+                                                    <SyntaxHighlighter language="javascript" style={docco} showLineNumbers={true} lineNumberStyle={{color: "#ff704d"}}>
+                                                        {item.example}
+                                                    </SyntaxHighlighter>
                                                     <div className="preview-answer">{item.tip}</div>
                                                 </div>
                                             </div>
-                                        </>
+                                        </div>
                                     )
                                 })
                             }
-
                         </>
                     }
-                    <div>Salut de pe quiz1!</div>
-                    <div>Salut de pe quiz2!</div>
-                    <div>Salut de pe quiz3!</div>
                 </div>
             </Layout>
         )
