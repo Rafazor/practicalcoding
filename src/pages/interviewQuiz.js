@@ -43,7 +43,6 @@ class InterviewQuiz extends React.Component {
                         <>
                             {
                                 this.state.doneQuizData.map(function (item, i) {
-                                    console.log(item);
                                     return (
                                         <>
                                             <div className="row">
@@ -51,12 +50,14 @@ class InterviewQuiz extends React.Component {
                                             </div>
                                             <div className="row">
                                                 <div className="col-md-6">
-                                                    {userAnswers[item.id]}
+                                                    <div className="preview-answer">
+                                                        {userAnswers[item.id]}
+                                                    </div>
                                                 </div>
                                                 <div className="col-md-6">
-                                                    <div>{item.answer}</div>
-                                                    <div>{item.example}</div>
-                                                    <div>{item.tip}</div>
+                                                    <div className="preview-answer">{item.answer}</div>
+                                                    <div className="preview-answer">{item.example}</div>
+                                                    <div className="preview-answer">{item.tip}</div>
                                                 </div>
                                             </div>
                                         </>

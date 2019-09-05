@@ -63,25 +63,56 @@ class Quiz extends React.Component {
     }
 
     render() {
+        let questionNumber = this.state.questionNumber
         return (
             <div className="container">
                 <Link to="/">Home</Link>
                 {
                     this.state.quizData.length > 0 &&
                     <>
-                        <div>{this.state.quizData[this.state.questionNumber].id}</div>
-                        <div>{this.state.quizData[this.state.questionNumber].question}</div>
-                        <textarea onChange={this.handleTextArea}
-                                  value={this.state.quizAnswers[this.state.questionNumber + 1] ? this.state.quizAnswers[this.state.questionNumber + 1] : ""}
-                                  cols={40} rows={10}/>
-                        <button onClick={this.getPrevQuestion}>Prev Question</button>
-                        <button onClick={this.getNextQuestion}>Next Question</button>
-                        {
-                            this.state.done === true &&
-                            <div>
-                                <button onClick={this.finishQuiz}>Finish Quiz!</button>
+                        <div className="row">
+                            <div className="col-sm-12">
+                                <div>
+                                    {
+                                        this.state.quizData.map(function (item, i) {
+                                            return (
+                                                <span className={i  < questionNumber + 1 ? "text-success" : "text-danger"}>{i + 1}</span>
+                                            )
+                                        })
+                                    }
+                                </div>
+
                             </div>
-                        }
+                        </div>
+                        <div className="row">
+                            <div className="col-sm-12">
+                                <div>{this.state.quizData[this.state.questionNumber].id}</div>
+                                <div>{this.state.quizData[this.state.questionNumber].question}</div>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-sm-12">
+                                <div>
+                                    <div>
+                                          <textarea onChange={this.handleTextArea}
+                                                    value={this.state.quizAnswers[this.state.questionNumber + 1] ? this.state.quizAnswers[this.state.questionNumber + 1] : ""}
+                                                    cols={40} rows={10}/>
+                                    </div>
+                                    <div>
+                                        <button onClick={this.getPrevQuestion}>Prev Question</button>
+                                        <button onClick={this.getNextQuestion}>Next Question</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-sm-12">
+                                {
+                                    this.state.done === true &&
+                                    <div>
+                                        <button onClick={this.finishQuiz}>Finish Quiz!</button>
+                                    </div>
+                                }
+                            </div>
+                        </div>
                     </>
                 }
             </div>
