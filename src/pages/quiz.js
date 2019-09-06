@@ -1,5 +1,15 @@
 import React from "react"
+import ReactDOM from 'react-dom'
 import {Link, navigate} from "gatsby"
+
+import brace from 'brace';
+import AceEditor from 'react-ace';
+
+import 'brace/mode/javascript';
+import 'brace/mode/html';
+import 'brace/mode/css';
+import 'brace/theme/monokai';
+
 
 class Quiz extends React.Component {
 
@@ -56,7 +66,6 @@ class Quiz extends React.Component {
         })
     }
 
-
     handleTextArea = (event) => {
         let answer = event.target.value
         let answerArr = {...this.state.quizAnswers}
@@ -66,8 +75,8 @@ class Quiz extends React.Component {
         });
     }
 
-    handleExamplesTextArea = (event) => {
-        let answer = event.target.value
+    handleExamplesTextArea = (code) => {
+        let answer = code
         let answerArr = {...this.state.quizExamples}
         answerArr[this.state.quizData[this.state.questionNumber].id] = answer
         this.setState({
@@ -97,28 +106,25 @@ class Quiz extends React.Component {
                     }
                     <Link className="btn btn-outline-danger float-right" to="/interviewQuiz/">Close Quiz!</Link>
                 </div>
+                <div className="row">
+                    <div className="col-sm-12">
+                        <div className="progress mb-3 mt-3" style={{height: "20px"}}>
+                            <div
+                                className={"progress-bar progress-bar-striped progress-bar-animated " + (this.state.done === true ? "bg-success" : "bg-warning")}
+                                role="progressbar"
+                                style={{width: this.state.progress + "%", fontWeight: "bold"}}
+                                aria-valuenow={this.state.progress}
+                                aria-valuemin="0"
+                                aria-valuemax="100">
+                                {this.state.progress}%
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 {
                     this.state.quizData.length > 0 &&
                     <>
-                        <div className="row">
-                            <div className="col-sm-12">
-                                <div>
-                                    <div className="progress mb-5" style={{height: "20px"}}>
-                                        <div
-                                            className={"progress-bar progress-bar-striped progress-bar-animated " + (this.state.done === true ? "bg-success" : "bg-warning")}
-                                            role="progressbar"
-                                            style={{width: this.state.progress + "%", fontWeight: "bold"}}
-                                            aria-valuenow={this.state.progress}
-                                            aria-valuemin="0"
-                                            aria-valuemax="100">
-                                            {this.state.progress}%
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
                         <div className="row">
                             <div className="col-sm-12">
                                 <h4 className="text-center mb-4">{this.state.quizData[this.state.questionNumber].question}</h4>
@@ -137,10 +143,27 @@ class Quiz extends React.Component {
                                     </div>
                                     <div className="mb-3">
                                         <div className="form-group">
-                                            <label htmlFor="example-text-area">Give a example if needed!</label>
-                                            <textarea onChange={this.handleExamplesTextArea}
-                                                      value={this.state.quizExamples[this.state.questionNumber + 1] ? this.state.quizExamples[this.state.questionNumber + 1] : ""}
-                                                      className="form-control" id="example-text-area" rows="3"/>
+                                            <AceEditor
+                                                placeholder="Add example here"
+                                                mode="javascript"
+                                                theme="monokai"
+                                                name="blah2"
+                                                style={{width: "100%", minHeight: "200px", height: "auto"}}
+                                                onLoad={this.onLoad}
+                                                onChange={code => this.handleExamplesTextArea(code)}
+                                                fontSize={14}
+                                                showPrintMargin={true}
+                                                showGutter={true}
+                                                highlightActiveLine={true}
+                                                editorProps={{$blockScrolling: true}}
+                                                value={this.state.quizExamples[this.state.questionNumber + 1] ? this.state.quizExamples[this.state.questionNumber + 1] : ""}
+                                                setOptions={{
+                                                    enableBasicAutocompletion: true,
+                                                    enableLiveAutocompletion: true,
+                                                    enableSnippets: true,
+                                                    showLineNumbers: true,
+                                                    tabSize: 2,
+                                                }}/>
                                         </div>
                                     </div>
                                     <div className="mb-5">
