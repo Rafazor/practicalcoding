@@ -33,7 +33,6 @@ class InterviewQuiz extends React.Component {
         }
     }
 
-
     render() {
         const userAnswers = this.state.userAnswers
         const userExamples = this.state.userExamples

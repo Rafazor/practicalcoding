@@ -1,15 +1,14 @@
 import React from "react"
-import ReactDOM from 'react-dom'
 import {Link, navigate} from "gatsby"
 
-import brace from 'brace';
-import AceEditor from 'react-ace';
+import Loadable from "react-loadable";
 
-import 'brace/mode/javascript';
-import 'brace/mode/html';
-import 'brace/mode/css';
-import 'brace/theme/monokai';
-
+const AceEditor = Loadable({
+    loader: () => import('../components/AceEditor'),
+    loading() {
+        return null
+    }
+});
 
 class Quiz extends React.Component {
 
@@ -142,29 +141,9 @@ class Quiz extends React.Component {
                                         </div>
                                     </div>
                                     <div className="mb-3">
-                                        <div className="form-group">
-                                            <AceEditor
-                                                placeholder="Add example here"
-                                                mode="javascript"
-                                                theme="monokai"
-                                                name="blah2"
-                                                style={{width: "100%", minHeight: "200px", height: "auto"}}
-                                                onLoad={this.onLoad}
-                                                onChange={code => this.handleExamplesTextArea(code)}
-                                                fontSize={14}
-                                                showPrintMargin={true}
-                                                showGutter={true}
-                                                highlightActiveLine={true}
-                                                editorProps={{$blockScrolling: true}}
-                                                value={this.state.quizExamples[this.state.questionNumber + 1] ? this.state.quizExamples[this.state.questionNumber + 1] : ""}
-                                                setOptions={{
-                                                    enableBasicAutocompletion: true,
-                                                    enableLiveAutocompletion: true,
-                                                    enableSnippets: true,
-                                                    showLineNumbers: true,
-                                                    tabSize: 2,
-                                                }}/>
-                                        </div>
+                                        <AceEditor handleExamplesTextArea={this.handleExamplesTextArea}
+                                                   quizExamples={this.state.quizExamples}
+                                                   questionNumber={this.state.questionNumber}/>
                                     </div>
                                     <div className="mb-5">
                                         {
