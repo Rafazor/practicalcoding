@@ -5,6 +5,7 @@ import 'brace/mode/javascript';
 import 'brace/mode/html';
 import 'brace/mode/css';
 import 'brace/theme/monokai';
+import 'brace/ext/language_tools';
 
 export default (props) => (
     <AceEditor
