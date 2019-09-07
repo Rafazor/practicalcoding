@@ -40,6 +40,35 @@ const jsInterviewData = [
                 example: "example",
                 tip: "tip"
             },
+            {
+                id: 5,
+                question: "How do get nth Fibonacci number?",
+                answer: "function fibonacci(n){\n" +
+                    "  var fibo = [0, 1];\n" +
+                    "  \n" +
+                    "  if (n <= 2) return 1;\n" +
+                    "\n" +
+                    "  for (var i = 2; i <=n; i++ ){\n" +
+                    "   fibo[i] = fibo[i-1]+fibo[i-2];\n" +
+                    "  }\n" +
+                    "\n" +
+                    " return fibo[n];\n" +
+                    "} \n" +
+                    "\n" +
+                    "> fibonacci(12);\n" +
+                    "  = 144 ",
+                tip: "tip",
+                algorithm: true,
+                algorithmProblem: "function fibonacci(n){\n" +
+                    "// Add your solution beyond this comment\n" +
+                    "\n" +
+                    "\n" +
+                    "// Add your solution above this comment\n" +
+                    "} \n" +
+                    "\n" +
+                    "fibonacci(12);",
+                algorithmAnswer: 144
+            }
         ]
     },
     {
@@ -87,6 +116,35 @@ const jsInterviewData = [
                     "</map>\n",
                 tip: "tip"
             },
+            {
+                id: 5,
+                question: "How do get nth Fibonacci number?",
+                answer: "function fibonacci(n){\n" +
+                    "  var fibo = [0, 1];\n" +
+                    "  \n" +
+                    "  if (n <= 2) return 1;\n" +
+                    "\n" +
+                    "  for (var i = 2; i <=n; i++ ){\n" +
+                    "   fibo[i] = fibo[i-1]+fibo[i-2];\n" +
+                    "  }\n" +
+                    "\n" +
+                    " return fibo[n];\n" +
+                    "} \n" +
+                    "\n" +
+                    "> fibonacci(12);\n" +
+                    "  = 144 ",
+                tip: "tip",
+                algorithm: true,
+                algorithmProblem: "function fibonacci(n){\n" +
+                    "// Add your solution beyond this comment\n" +
+                    "\n" +
+                    "\n" +
+                    "// Add your solution above this comment\n" +
+                    "} \n" +
+                    "\n" +
+                    "fibonacci(12);",
+                algorithmAnswer: 144
+            }
         ]
     },
     {
@@ -129,6 +187,36 @@ const jsInterviewData = [
                 example: "example",
                 tip: "tip"
             },
+            {
+                id: 5,
+                question: "How do get nth Fibonacci number?",
+                answer: "I create an array and start from iterate through.",
+                example: "function fibonacci(n){\n" +
+                    "  var fibo = [0, 1];\n" +
+                    "  \n" +
+                    "  if (n <= 2) return 1;\n" +
+                    "\n" +
+                    "  for (var i = 2; i <=n; i++ ){\n" +
+                    "   fibo[i] = fibo[i-1]+fibo[i-2];\n" +
+                    "  }\n" +
+                    "\n" +
+                    " return fibo[n];\n" +
+                    "} \n" +
+                    "\n" +
+                    "> fibonacci(12);\n" +
+                    "  = 144 ",
+                tip: "tip",
+                algorithm: true,
+                algorithmProblem: "function fibonacci(n){\n" +
+                    "// Add your solution beyond this comment\n" +
+                    "\n" +
+                    "\n" +
+                    "// Add your solution above this comment\n" +
+                    "} \n" +
+                    "\n" +
+                    "fibonacci(12);",
+                algorithmAnswer: 144
+            }
         ]
     }
 ]
