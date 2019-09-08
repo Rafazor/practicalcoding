@@ -143,7 +143,9 @@ class Quiz extends React.Component {
                                     <div className="mb-3">
                                         <AceEditor handleExamplesTextArea={this.handleExamplesTextArea}
                                                    quizExamples={this.state.quizExamples}
-                                                   questionNumber={this.state.questionNumber}/>
+                                                   questionNumber={this.state.questionNumber}
+                                                   currentQuiz={this.state.quizData[this.state.questionNumber]}
+                                        />
                                     </div>
                                     <div className="mb-5">
                                         {
