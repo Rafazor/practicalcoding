@@ -10,11 +10,8 @@ import 'brace/ext/language_tools';
 class AceEditorJs extends React.Component {
     getEditorValue = (props) => {
         if (!props.quizExamples[props.questionNumber + 1] && props.currentQuiz.algorithm === true) {
-            console.log("1", props)
             return props.currentQuiz.algorithmProblem
         } else {
-            console.log("2", props)
-
             return props.quizExamples[props.questionNumber + 1] ? props.quizExamples[props.questionNumber + 1] : ""
         }
     }
