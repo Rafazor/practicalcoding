@@ -1,14 +1,41 @@
 //theme colors
-$theme-color-1: #2A78AC;
-$theme-color-2: white;
+$theme-color-1: #005995;
+$theme-color-2: #e0474c;
+$theme-color-3: #f1f0ee;
+$theme-color-4: #fbf579;
+$theme-color-5: white;
+$theme-color-6: #7acfd6;
 
 
 //background colors
 .navigation-color {
-  background-color: $theme-color-1;
+  background-color: $theme-color-5;
 
   a {
     color: $theme-color-2 !important;
     font-weight: bold;
   }
+}
+
+section {
+  padding: 30px 0;
+  .link {
+    font-size: 25px;
+  }
+}
+
+.section-1 {
+  background-color: $theme-color-3;
+}
+
+.section-2 {
+  background-color: $theme-color-2;
+  color: white;
+  a {
+    color: white;
+  }
+}
+
+.section-3 {
+  background-color: $theme-color-5;
 }
