@@ -1,5 +1,7 @@
 import React from "react"
 import {Link} from "gatsby"
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faArrowRight} from '@fortawesome/free-solid-svg-icons'
 
 export default () => (
     <section className="section-2">
@@ -18,8 +20,10 @@ export default () => (
                         <p className="mb-2">Compare your results with our suggested answers and algorithms solutions!</p>
                         <p>This interview quiz will test your HTML5, CSS3, JavaScript, ECMAScript and Algorithms Knowledge!</p>
                     </div>
-                    <div className="d-flex justify-content-end">
-                        <Link to="/interviewQuiz/" className="btn link btn-lg">Start Interview Quiz!</Link>
+                    <div className="d-flex justify-content-end link">
+                        <Link to="/interviewQuiz/" className="btn">
+                            <span className="btn-content">Start Interview Quiz!</span>
+                            <span className="icon"><FontAwesomeIcon icon={faArrowRight}/></span></Link>
                     </div>
                 </div>
             </div>

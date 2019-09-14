@@ -1,5 +1,8 @@
 import React from "react"
 import {Link} from "gatsby"
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faArrowRight} from '@fortawesome/free-solid-svg-icons'
+
 
 export default () => (
     <section className="section-1">
@@ -17,8 +20,11 @@ export default () => (
                             important must known info.</p>
                         <p>This book is mainly focused on HTML5, CSS3, JavaScript, ECMAScript and Algorithms.</p>
                     </div>
-                    <div>
-                        <Link to={"/"} className="btn link btn-lg">Get The Book Today!</Link>
+                    <div className="link">
+                        <Link to={"/"} className="btn">
+                            <span className="btn-content">Get Your Book Today!</span>
+                            <span className="icon"><FontAwesomeIcon icon={faArrowRight}/></span>
+                        </Link>
                     </div>
                 </div>
                 <div className="col-md-6">
