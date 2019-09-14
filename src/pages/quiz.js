@@ -95,12 +95,11 @@ class Quiz extends React.Component {
 
     render() {
         return (
-            <div className="container">
+            <div className="container mt-3 mb-3">
                 <div className="mb-3 mt-3 clearfix">
                     {
                         this.state.done === true &&
-                        <button className="btn btn-outline-success float-left" onClick={this.finishQuiz}>See
-                            Results!
+                        <button className="btn btn-outline-success float-left" onClick={this.finishQuiz}>Check Quiz Results!
                         </button>
                     }
                     <Link className="btn btn-outline-danger float-right" to="/interviewQuiz/">Close Quiz!</Link>
@@ -170,8 +169,7 @@ class Quiz extends React.Component {
                                 {
                                     this.state.done === true &&
                                     <div className="d-flex justify-content-center">
-                                        <button className="btn btn-outline-success btn-lg" onClick={this.finishQuiz}>See
-                                            Results!
+                                        <button className="btn btn-outline-success btn-lg" onClick={this.finishQuiz}>Check Quiz Results!
                                         </button>
                                     </div>
                                 }

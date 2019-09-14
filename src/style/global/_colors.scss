@@ -1,0 +1,14 @@
+//theme colors
+$theme-color-1: #2A78AC;
+$theme-color-2: white;
+
+
+//background colors
+.navigation-color {
+  background-color: $theme-color-1;
+
+  a {
+    color: $theme-color-2 !important;
+    font-weight: bold;
+  }
+}

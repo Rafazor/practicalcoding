@@ -2,7 +2,7 @@ import React from "react"
 import {Link} from "gatsby"
 
 export default () => (
-    <div className="row">
+    <div className="row mt-4 mb-4">
         <div className="col-md-6">
             <h4>MEAL PREP: The Complete Cookbook To Clean Eating, Weight Loss And Food Savings With Easy To Cook
                 Recipes </h4>
