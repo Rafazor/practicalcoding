@@ -5,32 +5,35 @@ export default () => (
     <section className="section-1">
         <div className="container">
             <div className="row pt-4 pb-4 flex-column-reverse flex-md-row">
-                <div className="col-md-6">
-                    <h4>Coding Interview: Learn How To Solve Programming Questions and Algorithms </h4>
-                    <p>
-                        Mеаl Prеррing mеrеlу is рrераring some, or аll оf уоur meals аhеаd оf timе. It’s likе hаving
-                        thоѕе
-                        TV dinnеrѕ thаt you should purchase frоm thе ѕtоrе, еxсерt thаt уоu рrераrе them yourself, with
-                        bеttеr, hеаlthiеr аnd unрrосеѕѕеd ingrеdiеntѕ.
-                    </p>
-
-
-                            <Link to={"/"} className="btn link btn-lg">Get The Book Today!</Link>
-
-
-
+                <div className="col-md-6 d-flex justify-content-between flex-column">
+                    <div>
+                        <h4 className="mb-3">Coding Interview: Learn How To Solve Programming Questions and
+                            Algorithms </h4>
+                        <p className="mb-2">
+                            We selected all the top interview topics that are relevant in 2019 and 2020 for a javascript
+                            and front end developer!
+                        </p>
+                        <p className="mb-2">All topics are explained by our experienced developers with examples and
+                            important must known info.</p>
+                        <p>This book is mainly focused on HTML5, CSS3, JavaScript, ECMAScript and Algorithms.</p>
+                    </div>
+                    <div>
+                        <Link to={"/"} className="btn link btn-lg">Get The Book Today!</Link>
+                    </div>
                 </div>
                 <div className="col-md-6">
                     <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
                         <div className="carousel-inner">
                             <div className="carousel-item active">
                                 <img src={"cover-paperback.png"}
-                                     style={{maxHeight: "400px", margin: "0 auto"}} className="d-block img-fluid" alt="book"/>
+                                     style={{maxHeight: "400px", margin: "0 auto"}} className="d-block img-fluid"
+                                     alt="book"/>
                             </div>
                             <div className="carousel-item">
                                 <img
                                     src={"kindle.png"}
-                                    style={{maxHeight: "400px", margin: "0 auto"}} className="d-block img-fluid" alt="ebook"/>
+                                    style={{maxHeight: "400px", margin: "0 auto"}} className="d-block img-fluid"
+                                    alt="ebook"/>
                             </div>
                         </div>
                         <a className="carousel-control-prev" href="#carouselExampleControls" role="button"

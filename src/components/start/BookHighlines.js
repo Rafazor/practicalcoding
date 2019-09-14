@@ -3,7 +3,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faAward, faBookOpen, faUserCheck} from '@fortawesome/free-solid-svg-icons'
 
 export default () => (
-    <section className="text-center section-3 pt-4 pb-4">
+    <section className="text-center section-3">
         <div className="container">
             <div className="row d-flex justify-content-between">
                 <div className="col-lg-4">

@@ -9,15 +9,18 @@ export default () => (
                     <img src={"mockuper.png"}
                          style={{maxHeight: "400px", margin: "0 auto"}} className="d-block img-fluid" alt="book"/>
                 </div>
-                <div className="col-md-6">
-                    <h4>Coding Interview: Learn How To Solve Programming Questions and Algorithms </h4>
-                    <p>
-                        Mеаl Prеррing mеrеlу is рrераring some, or аll оf уоur meals аhеаd оf timе. It’s likе hаving
-                        thоѕе
-                        TV dinnеrѕ thаt you should purchase frоm thе ѕtоrе, еxсерt thаt уоu рrераrе them yourself, with
-                        bеttеr, hеаlthiеr аnd unрrосеѕѕеd ingrеdiеntѕ.
-                    </p>
-                    <Link to="/interviewQuiz/" className="btn link btn-lg">Start Interview Quiz!</Link>
+                <div className="col-md-6 d-flex justify-content-between flex-column">
+                    <div>
+                        <h4 className="mb-3">Enhance Your Knowledge!</h4>
+                        <p className="mb-2">
+                            Test your technical interview skills with our programming questions and algorithms!
+                        </p>
+                        <p className="mb-2">Compare your results with our suggested answers and algorithms solutions!</p>
+                        <p>This interview quiz will test your HTML5, CSS3, JavaScript, ECMAScript and Algorithms Knowledge!</p>
+                    </div>
+                    <div className="d-flex justify-content-end">
+                        <Link to="/interviewQuiz/" className="btn link btn-lg">Start Interview Quiz!</Link>
+                    </div>
                 </div>
             </div>
         </div>
