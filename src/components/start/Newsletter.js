@@ -1,5 +1,11 @@
 import React from "react"
 
+import MailchimpSubscribe from "react-mailchimp-subscribe"
+
+const url = "https://yahoo.us20.list-manage.com/subscribe/post?u=887374e8a9bc4d8511398f08f&amp;id=aec74ab1ed";
+
+const SimpleForm = () => <MailchimpSubscribe url={url}/>
+
 export default () => (
     <section className="home-newsletter section-4">
         <div className="container">

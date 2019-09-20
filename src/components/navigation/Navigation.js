@@ -13,8 +13,8 @@ export default () => (
             </button>
             <div className="collapse navbar-collapse justify-content-md-end" id="navbarNavAltMarkup">
                 <div className="navbar-nav text-right">
-                    <Link className="nav-item nav-link" href="#">Interview Quiz</Link>
-                    <Link className="nav-item nav-link" href="#">About</Link>
+                    <Link to="/interviewQuiz/" className="nav-item nav-link">Interview Quiz</Link>
+                    <Link to={"/"} className="nav-item nav-link">About</Link>
                     <a className="nav-item nav-link" href="www.amazon.com" target="_blank">Shop</a>
                 </div>
             </div>
