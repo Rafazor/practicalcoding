@@ -16,8 +16,7 @@ export default () => (
                             We selected all the top interview topics that are relevant in 2019 and 2020 for a javascript
                             and front end developer!
                         </p>
-                        <p className="mb-2">All topics are explained by our experienced developers with examples and
-                            important must known info.</p>
+                        <p className="mb-2">All topics are explained by our experienced developers with examples and must known info before going to an interview.</p>
                         <p>This book is mainly focused on HTML5, CSS3, JavaScript, ECMAScript and Algorithms.</p>
                     </div>
                     <div className="link">

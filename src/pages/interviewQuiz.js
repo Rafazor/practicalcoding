@@ -43,7 +43,7 @@ class InterviewQuiz extends React.Component {
             <Layout>
                 <div className="container">
                     <section>
-                        <div className="row">
+                        <div className={"row " + (this.state.done !== false ? 'd-none d-md-flex' : '')}>
                             <div className="col-sm-4 d-flex justify-content-center">
                                 <img style={{maxHeight: "300px"}} className="img-fluid" src="/coding-icon.png"
                                      alt="coding icon"/>
