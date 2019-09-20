@@ -79,7 +79,7 @@ class InterviewQuiz extends React.Component {
                         <div className="row link d-flex justify-content-center mt-2">
                             <button className="btn" onClick={this.getQuizSet}>
                                 <span
-                                    className="btn-content">{this.props.location.state.done !== undefined ? "Restart" : "Start"} Quiz!</span>
+                                    className="btn-content">{this.state.done !== false ? "Restart" : "Start"} Quiz!</span>
                                 <span className="icon"><FontAwesomeIcon icon={faArrowRight}/></span>
                             </button>
                         </div>
