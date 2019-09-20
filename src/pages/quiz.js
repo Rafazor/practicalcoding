@@ -95,14 +95,15 @@ class Quiz extends React.Component {
 
     render() {
         return (
-            <div className="container mt-3 mb-3">
+            <div className="container pt-3 pb-3 quiz-container">
                 <div className="mb-3 mt-3 clearfix">
                     {
                         this.state.done === true &&
-                        <button className="btn btn-outline-success float-left" onClick={this.finishQuiz}>Check Quiz Results!
+                        <button className="btn btn-success float-left" onClick={this.finishQuiz}>Check Quiz
+                            Results!
                         </button>
                     }
-                    <Link className="btn btn-outline-danger float-right" to="/interviewQuiz/">Close Quiz!</Link>
+                    <Link className="btn btn-danger float-right" to="/interviewQuiz/">Close Quiz!</Link>
                 </div>
                 <div className="row">
                     <div className="col-sm-12">
@@ -149,14 +150,14 @@ class Quiz extends React.Component {
                                     <div className="mb-5">
                                         {
                                             this.state.questionNumber > 0 &&
-                                            <button className="btn btn-outline-primary float-left"
+                                            <button className="btn btn-primary float-left"
                                                     onClick={this.getPrevQuestion}>Prev
                                                 Question
                                             </button>
                                         }
                                         {
                                             this.state.questionNumber < this.state.quizData.length - 1 &&
-                                            <button className="btn btn-outline-primary float-right"
+                                            <button className="btn btn-primary float-right"
                                                     onClick={this.getNextQuestion}>Next
                                                 Question
                                             </button>
@@ -169,7 +170,8 @@ class Quiz extends React.Component {
                                 {
                                     this.state.done === true &&
                                     <div className="d-flex justify-content-center">
-                                        <button className="btn btn-outline-success btn-lg" onClick={this.finishQuiz}>Check Quiz Results!
+                                        <button className="btn btn-success btn-lg"
+                                                onClick={this.finishQuiz}>Check Quiz Results!
                                         </button>
                                     </div>
                                 }

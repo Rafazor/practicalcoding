@@ -3,9 +3,9 @@ import {Link} from "gatsby"
 
 
 export default () => (
-    <nav className="navbar navbar-expand-md navbar-light navigation-color start-nav">
+    <nav className="navbar navbar-expand-md navbar-light navigation-color start-nav shadow-sm">
         <div className="container">
-            <Link to={'/'} className="navbar-brand"><img style={{maxWidth: "230px"}} className="img-fluid" src={"logo.png"} alt="logo"/></Link>
+            <Link to={'/'} className="navbar-brand"><img style={{maxWidth: "230px"}} className="img-fluid" src={"/logo.png"} alt="logo"/></Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarNavAltMarkup"
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">

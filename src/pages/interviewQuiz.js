@@ -4,6 +4,8 @@ import Layout from "../components/Layout"
 import jsInterviewData from "../components/interviewData/jsInterviewData"
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import {docco} from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faArrowRight, faUser, faUserNinja} from "@fortawesome/free-solid-svg-icons";
 
 class InterviewQuiz extends React.Component {
 
@@ -40,20 +42,66 @@ class InterviewQuiz extends React.Component {
         return (
             <Layout>
                 <div className="container">
-                    <Link to="/">Home</Link>
-                    <div onClick={this.getQuizSet}>START</div>
+                    <section>
+                        <div className="row">
+                            <div className="col-sm-4 d-flex justify-content-center">
+                                <img style={{maxHeight: "300px"}} className="img-fluid" src="/coding-icon.png"
+                                     alt="coding icon"/>
+                            </div>
+                            <div className="col-sm-8">
+                                <h1>Before you start!</h1>
+                                <p>
+                                    <div className="font-weight-bold">1. Cut out the distractions</div>
+                                    <div>Distractions make it difficult to pay attention to what you’re doing, which in
+                                        turn makes it harder to commit facts to memory. Give yourself a leg up by
+                                        turning off the notifications on your phone, temporarily blocking your favorite
+                                        websites, or sticking to instrumental music while you study (so you’re not
+                                        tempted to sing along!).
+                                    </div>
+                                </p>
+                                <p>
+                                    <div className="font-weight-bold">2. Stay calm and confident</div>
+                                    <div>Naturally, nerves will begin to kick in, but try to stay calm and confident.
+                                        Take deep breaths and practice positive, self-affirmation thoughts in your mind.
+                                        If you’ve done adequate research, you shouldn’t have anything to fret about.
+                                    </div>
+                                </p>
+                                <p>
+                                    <div className="font-weight-bold">3. Avoid getting stuck</div>
+                                    <div>If you notice that you are stuck on one particular question, or spending too
+                                        much time on a really detailed answer, go to the next question. Go back at the
+                                        end of the test to fill in anything you missed.
+                                    </div>
+                                </p>
+
+                            </div>
+                        </div>
+                        <div className="row link d-flex justify-content-center mt-2">
+                            <button className="btn" onClick={this.getQuizSet}>
+                                <span
+                                    className="btn-content">{this.props.location.state.done !== undefined ? "Restart" : "Start"} Quiz!</span>
+                                <span className="icon"><FontAwesomeIcon icon={faArrowRight}/></span>
+                            </button>
+                        </div>
+                    </section>
                     {
                         this.state.done === true &&
-                        <>
+                        <section>
                             {
                                 this.state.doneQuizData.map(function (item, i) {
                                     return (
                                         <div key={i}>
                                             <div className="row">
-                                                <div className="col-sm-12">{item.question}</div>
+                                                <div
+                                                    className="col-sm-12 text-center font-weight-bold question-title mb-3">
+                                                    <div className="pb-1 border-bottom">{item.question}</div>
+                                                </div>
                                             </div>
                                             <div className="row">
                                                 <div className="col-md-6">
+                                                    <div
+                                                        className="d-flex justify-content-center text-success answer-icon mb-3">
+                                                        <FontAwesomeIcon icon={faUser}/></div>
                                                     <div className="preview-answer">
                                                         {userAnswers[item.id]}
                                                     </div>
@@ -67,7 +115,10 @@ class InterviewQuiz extends React.Component {
 
                                                 </div>
                                                 <div className="col-md-6">
-                                                    <div className="preview-answer">{item.answer}</div>
+                                                    <div
+                                                        className="d-flex justify-content-center text-danger answer-icon mb-3">
+                                                        <FontAwesomeIcon icon={faUserNinja}/></div>
+                                                    <div className="text-justify">{item.answer}</div>
                                                     {item.example &&
                                                     <SyntaxHighlighter language="javascript" style={docco}
                                                                        showLineNumbers={true}
@@ -75,14 +126,13 @@ class InterviewQuiz extends React.Component {
                                                         {item.example}
                                                     </SyntaxHighlighter>
                                                     }
-                                                    <div className="preview-answer">{item.tip}</div>
                                                 </div>
                                             </div>
                                         </div>
                                     )
                                 })
                             }
-                        </>
+                        </section>
                     }
                 </div>
             </Layout>

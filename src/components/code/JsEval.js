@@ -50,7 +50,7 @@ class JsEval extends React.Component {
             <div className="mt-3 mb-3">
                 <div className="row">
                     <div className="col-sm-12">
-                        <button onClick={this.handleShowCheckSolution} className="btn btn-outline-warning mb-2">Check
+                        <button style={{color: "white"}} onClick={this.handleShowCheckSolution} className="btn btn-warning mb-2">Check
                             Solution
                         </button>
                     </div>
