@@ -6,6 +6,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import {docco} from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowRight, faUser, faUserNinja} from "@fortawesome/free-solid-svg-icons";
+import {Helmet} from "react-helmet";
 
 class InterviewQuiz extends React.Component {
 
@@ -41,6 +42,13 @@ class InterviewQuiz extends React.Component {
 
         return (
             <Layout>
+                <Helmet>
+                    <meta charSet="utf-8"/>
+                    <title>Online Coding Books - Coding Interview Quiz</title>
+                    <link rel="canonical" href="https://onlinecodingbooks.com/interviewQuiz/" />
+                    <meta name="description"
+                          content="This interview quiz will test your HTML5, CSS3, JavaScript, ECMAScript and Algorithms Knowledge!"/>
+                </Helmet>
                 <div className="container">
                     <section>
                         <div className={"row " + (this.state.done !== false ? 'd-none d-md-flex' : '')}>
