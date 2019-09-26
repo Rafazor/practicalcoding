@@ -15,6 +15,7 @@ class Index extends React.Component {
 ECMAScript and Algorithms"/>
                     <link rel="canonical" href="https://onlinecodingbooks.com/"/>
                     <meta name="google-site-verification" content="6cnnzMfAqov9B9Tvj9iqKPcXGbAklNilQsFWBu-3IcU"/>
+                    <meta name="msvalidate.01" content="3DFC34FFFA6A9D0C795E0E2F28E85C6A" />
                 </Helmet>
                 <StartContent/>
             </Layout>
