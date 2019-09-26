@@ -47,7 +47,7 @@ class InterviewQuiz extends React.Component {
                     <title>Online Coding Books - Coding Interview Quiz</title>
                     <link rel="canonical" href="https://onlinecodingbooks.com/interviewQuiz/"/>
                     <meta name="description"
-                          content="This interview quiz will test your HTML5, CSS3, JavaScript, ECMAScript and Algorithms Knowledge!"/>
+                          content="This interview quiz will test your HTML5, CSS3, JavaScript, ECMAScript and Algorithms Knowledge! All topics are explained by our experienced developers with examples and must known info before going to an interview. Compare your results with our suggested answers and algorithms solutions!"/>
                 </Helmet>
                 <div className="container">
                     <section>
