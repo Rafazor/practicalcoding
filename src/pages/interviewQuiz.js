@@ -45,7 +45,7 @@ class InterviewQuiz extends React.Component {
                 <Helmet>
                     <meta charSet="utf-8"/>
                     <title>Online Coding Books - Coding Interview Quiz</title>
-                    <link rel="canonical" href="https://onlinecodingbooks.com/interviewQuiz/" />
+                    <link rel="canonical" href="https://onlinecodingbooks.com/interviewQuiz/"/>
                     <meta name="description"
                           content="This interview quiz will test your HTML5, CSS3, JavaScript, ECMAScript and Algorithms Knowledge!"/>
                 </Helmet>
