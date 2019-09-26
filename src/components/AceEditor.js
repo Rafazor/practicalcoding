@@ -25,7 +25,7 @@ class AceEditorJs extends React.Component {
                 <div>
                     <AceEditor
                         placeholder="Add example here"
-                        mode="javascript"
+                        mode={this.props.currentQuiz.type}
                         theme="monokai"
                         name="blah2"
                         style={{width: "100%", minHeight: "200px", height: "auto"}}

@@ -95,14 +95,20 @@ class InterviewQuiz extends React.Component {
                     {
                         this.state.done === true &&
                         <section>
+                            <div className="row">
+                                <div className="col-sm-12">
+                                    <h2>Quiz results!</h2>
+                                    <p>Compare your results with our ninja!</p>
+                                </div>
+                            </div>
                             {
                                 this.state.doneQuizData.map(function (item, i) {
                                     return (
                                         <div key={i}>
                                             <div className="row">
                                                 <div
-                                                    className="col-sm-12 text-center font-weight-bold question-title mb-3">
-                                                    <div className="pb-1 border-bottom">{item.question}</div>
+                                                    className="col-sm-12 text-center font-weight-bold question-title mb-3 mt-3">
+                                                    <div className="pb-1 border-bottom">{i + 1}. {item.question}</div>
                                                 </div>
                                             </div>
                                             <div className="row">
@@ -110,15 +116,19 @@ class InterviewQuiz extends React.Component {
                                                     <div
                                                         className="d-flex justify-content-center text-success answer-icon mb-3">
                                                         <FontAwesomeIcon icon={faUser}/></div>
+                                                    <div className="font-weight-bold pb-2 pt-2">Your answer!</div>
                                                     <div className="preview-answer">
                                                         {userAnswers[item.id]}
                                                     </div>
                                                     {userExamples[item.id] &&
-                                                    <SyntaxHighlighter language="javascript" style={docco}
-                                                                       showLineNumbers={true}
-                                                                       lineNumberStyle={{color: "#ff704d"}}>
-                                                        {userExamples[item.id]}
-                                                    </SyntaxHighlighter>
+                                                    <>
+                                                        <div className="font-weight-bold pb-2 pt-2">Your example!</div>
+                                                        <SyntaxHighlighter language="javascript" style={docco}
+                                                                           showLineNumbers={true}
+                                                                           lineNumberStyle={{color: "#ff704d"}}>
+                                                            {userExamples[item.id]}
+                                                        </SyntaxHighlighter>
+                                                    </>
                                                     }
 
                                                 </div>
@@ -126,13 +136,17 @@ class InterviewQuiz extends React.Component {
                                                     <div
                                                         className="d-flex justify-content-center text-danger answer-icon mb-3">
                                                         <FontAwesomeIcon icon={faUserNinja}/></div>
+                                                    <div className="font-weight-bold pb-2 pt-2">Ninja answer!</div>
                                                     <div className="text-justify">{item.answer}</div>
                                                     {item.example &&
-                                                    <SyntaxHighlighter language="javascript" style={docco}
-                                                                       showLineNumbers={true}
-                                                                       lineNumberStyle={{color: "#ff704d"}}>
-                                                        {item.example}
-                                                    </SyntaxHighlighter>
+                                                    <>
+                                                        <div className="font-weight-bold pb-2 pt-2">Ninja example!</div>
+                                                        <SyntaxHighlighter language="javascript" style={docco}
+                                                                           showLineNumbers={true}
+                                                                           lineNumberStyle={{color: "#ff704d"}}>
+                                                            {item.example}
+                                                        </SyntaxHighlighter>
+                                                    </>
                                                     }
                                                 </div>
                                             </div>

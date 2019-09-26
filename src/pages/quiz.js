@@ -134,18 +134,23 @@ class Quiz extends React.Component {
                                 <div style={{width: "600px"}}>
                                     <div className="mb-3">
                                         <div className="form-group">
-                                            <label htmlFor="response-text-area">Response!</label>
+                                            <label htmlFor="response-text-area" className="font-weight-bold">Add your response here.</label>
                                             <textarea onChange={this.handleTextArea}
                                                       value={this.state.quizAnswers[this.state.questionNumber + 1] ? this.state.quizAnswers[this.state.questionNumber + 1] : ""}
                                                       className="form-control" id="response-text-area" rows="3"/>
                                         </div>
                                     </div>
                                     <div className="mb-3">
-                                        <AceEditor handleExamplesTextArea={this.handleExamplesTextArea}
-                                                   quizExamples={this.state.quizExamples}
-                                                   questionNumber={this.state.questionNumber}
-                                                   currentQuiz={this.state.quizData[this.state.questionNumber]}
-                                        />
+                                        {this.state.quizData[this.state.questionNumber].example &&
+                                        <>
+                                            <div className="font-weight-bold pb-2">Can you give an example?</div>
+                                            <AceEditor handleExamplesTextArea={this.handleExamplesTextArea}
+                                                       quizExamples={this.state.quizExamples}
+                                                       questionNumber={this.state.questionNumber}
+                                                       currentQuiz={this.state.quizData[this.state.questionNumber]}
+                                            />
+                                        </>
+                                        }
                                     </div>
                                     <div className="mb-5">
                                         {

@@ -14,7 +14,7 @@ export default () => (
             <div className="collapse navbar-collapse justify-content-md-end" id="navbarNavAltMarkup">
                 <div className="navbar-nav text-right">
                     <Link to="/interviewQuiz/" className="nav-item nav-link">Interview Quiz</Link>
-                    <Link to={"/"} className="nav-item nav-link">About</Link>
+                    {/*<Link to={"/"} className="nav-item nav-link">About</Link>*/}
                     <a className="nav-item nav-link" href="www.amazon.com" target="_blank">Shop</a>
                 </div>
             </div>
