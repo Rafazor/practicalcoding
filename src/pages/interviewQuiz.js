@@ -25,7 +25,7 @@ class InterviewQuiz extends React.Component {
     }
 
     componentDidMount() {
-        if (this.props.location.state.done !== null) {
+        if (this.props.location.state !== null) {
             if (this.props.location.state.done !== undefined) {
                 this.setState(() => ({
                         doneQuizData: this.props.location.state.doneQuizData,
