@@ -25,14 +25,16 @@ class InterviewQuiz extends React.Component {
     }
 
     componentDidMount() {
-        if (this.props.location.state.done !== undefined) {
-            this.setState(() => ({
-                    doneQuizData: this.props.location.state.doneQuizData,
-                    userAnswers: this.props.location.state.userAnswers,
-                    userExamples: this.props.location.state.userExamples,
-                    done: this.props.location.state.done
-                }
-            ));
+        if (this.props.location.state.done !== null) {
+            if (this.props.location.state.done !== undefined) {
+                this.setState(() => ({
+                        doneQuizData: this.props.location.state.doneQuizData,
+                        userAnswers: this.props.location.state.userAnswers,
+                        userExamples: this.props.location.state.userExamples,
+                        done: this.props.location.state.done
+                    }
+                ));
+            }
         }
     }
 
@@ -58,29 +60,29 @@ class InterviewQuiz extends React.Component {
                             </div>
                             <div className="col-sm-8">
                                 <h1>Before you start!</h1>
-                                <p>
+                                <div>
                                     <div className="font-weight-bold">1. Cut out the distractions</div>
-                                    <div>Distractions make it difficult to pay attention to what you’re doing, which in
+                                    <p>Distractions make it difficult to pay attention to what you’re doing, which in
                                         turn makes it harder to commit facts to memory. Give yourself a leg up by
                                         turning off the notifications on your phone, temporarily blocking your favorite
                                         websites, or sticking to instrumental music while you study (so you’re not
                                         tempted to sing along!).
-                                    </div>
-                                </p>
-                                <p>
+                                    </p>
+                                </div>
+                                <div>
                                     <div className="font-weight-bold">2. Stay calm and confident</div>
-                                    <div>Naturally, nerves will begin to kick in, but try to stay calm and confident.
+                                    <p>Naturally, nerves will begin to kick in, but try to stay calm and confident.
                                         Take deep breaths and practice positive, self-affirmation thoughts in your mind.
                                         If you’ve done adequate research, you shouldn’t have anything to fret about.
-                                    </div>
-                                </p>
-                                <p>
+                                    </p>
+                                </div>
+                                <div>
                                     <div className="font-weight-bold">3. Avoid getting stuck</div>
-                                    <div>If you notice that you are stuck on one particular question, or spending too
+                                    <p>If you notice that you are stuck on one particular question, or spending too
                                         much time on a really detailed answer, go to the next question. Go back at the
                                         end of the test to fill in anything you missed.
-                                    </div>
-                                </p>
+                                    </p>
+                                </div>
 
                             </div>
                         </div>

@@ -15,7 +15,7 @@ export default () => (
                 <div className="navbar-nav text-right">
                     <Link to="/interviewQuiz/" className="nav-item nav-link">Interview Quiz</Link>
                     {/*<Link to={"/"} className="nav-item nav-link">About</Link>*/}
-                    <a className="nav-item nav-link" href="www.amazon.com" target="_blank">Shop</a>
+                    <a className="nav-item nav-link" href="https://www.amazon.com/dp/B07YDS5LLN" target="_blank">Shop</a>
                 </div>
             </div>
         </div>

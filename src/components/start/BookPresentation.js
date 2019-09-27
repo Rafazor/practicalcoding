@@ -20,10 +20,10 @@ export default () => (
                         <p>This book is mainly focused on HTML5, CSS3, JavaScript, ECMAScript and Algorithms.</p>
                     </div>
                     <div className="link">
-                        <Link to={"/"} className="btn">
+                        <a href="https://www.amazon.com/dp/B07YDS5LLN" className="btn">
                             <span className="btn-content">Get Your Book Today!</span>
                             <span className="icon"><FontAwesomeIcon icon={faArrowRight}/></span>
-                        </Link>
+                        </a>
                     </div>
                 </div>
                 <div className="col-md-6">
